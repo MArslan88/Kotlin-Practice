@@ -1,3 +1,5 @@
+import kotlin.math.abs
+
 fun main(){
 
 //    var name = "Muhammad Arslan"
@@ -41,11 +43,18 @@ fun main(){
 
 //    // Array in Kotlin
 //    var names = arrayOf("Arslan", "Danish", "Tanzeel","Noman")
-////    for(name in names){
-////        println(name)
-////    }
+//    for(name in names){
+//        println(name)
+//    }
 //
 //    names.forEach { println(it) }
+
+
+//    val cakes = listOf("carrot", "cheese", "chocolate")
+//
+//    for (cake in cakes) {
+//        println("Yummy, it's a $cake cake!")
+//    }
 
 
     // Ranges
@@ -226,25 +235,45 @@ fun main(){
 //    println("Number of even elements: $evenCount")
 
 
+//    val shuffled = listOf(5, 4, 2, 1, 3, -10)                   // 1
+//    val natural = shuffled.sorted()                             // 2
+//    val inverted = shuffled.sortedBy { -it }                    // 3
+//    val descending = shuffled.sortedDescending()                // 4
+//    val descendingBy = shuffled.sortedByDescending { abs(it)  } // 5
+//
+//    println("Shuffled: $shuffled")
+//    println("Natural order: $natural")
+//    println("Inverted natural order: $inverted")
+//    println("Inverted natural order value: $descending")
+//    println("Inverted natural order of absolute values: $descendingBy")
 
-    data class Person(val name: String, val city: String, val phone: String) // 1
+    val A = listOf("a", "b", "c")                  // 1
+    val B = listOf(1, 2, 3, 4)                     // 1
 
-    val people = listOf(                                                     // 2
-        Person("John", "Boston", "+1-888-123456"),
-        Person("Sarah", "Munich", "+49-777-789123"),
-        Person("Svyatoslav", "Saint-Petersburg", "+7-999-456789"),
-        Person("Vasilisa", "Saint-Petersburg", "+7-999-123456"))
+    val resultPairs = A zip B                      // 2
+    val resultReduce = A.zip(B) { a, b -> "$a$b" } // 3
 
-    val phoneBook = people.associateBy { it.phone }                          // 3
-    val cityBook = people.associateBy(Person::phone, Person::city)           // 4
-    val peopleCities = people.groupBy(Person::city, Person::name)            // 5
-    val lastPersonCity = people.associateBy(Person::city, Person::name)      // 6
+    println("A to B: $resultPairs")
+    println("\$A\$B: $resultReduce")
 
-
-    println("People: $people")
-    println("Phone book: $phoneBook")
-    println("City book: $cityBook")
-    println("People living in each city: $peopleCities")
-    println("Last person living in each city: $lastPersonCity")
+//    data class Person(val name: String, val city: String, val phone: String) // 1
+//
+//    val people = listOf(                                                     // 2
+//        Person("John", "Boston", "+1-888-123456"),
+//        Person("Sarah", "Munich", "+49-777-789123"),
+//        Person("Svyatoslav", "Saint-Petersburg", "+7-999-456789"),
+//        Person("Vasilisa", "Saint-Petersburg", "+7-999-123456"))
+//
+//    val phoneBook = people.associateBy { it.phone }                          // 3
+//    val cityBook = people.associateBy(Person::phone, Person::city)           // 4
+//    val peopleCities = people.groupBy(Person::city, Person::name)            // 5
+//    val lastPersonCity = people.associateBy(Person::city, Person::name)      // 6
+//
+//
+//    println("People: $people")
+//    println("Phone book: $phoneBook")
+//    println("City book: $cityBook")
+//    println("People living in each city: $peopleCities")
+//    println("Last person living in each city: $lastPersonCity")
 
 }
