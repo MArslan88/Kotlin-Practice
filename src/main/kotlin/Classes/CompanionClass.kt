@@ -1,3 +1,5 @@
+package Classes
+
 fun main(){
     var cc = CompanionClass()
     // need an object
@@ -6,7 +8,7 @@ fun main(){
 
     // no need of an object for companion object
     println("Second Value is : ${CompanionClass.secondValue}")
-    println("Product is : ${CompanionClass.product(5,10)}")
+    println("Product is : ${CompanionClass.product(5, 10)}")
 }
 
 
@@ -16,6 +18,7 @@ class CompanionClass {
         return a+b
     }
 
+    // it will work just like static key word in java
     companion object{
         var secondValue = 20
         fun product(a: Int, b: Int) : Int{
