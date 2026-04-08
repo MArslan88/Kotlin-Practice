@@ -12,10 +12,13 @@ fun main(){
 
 //    println("Addition = ${operation(4,5)}")
 
-    greeting("Arslan","Good Morning")
-    // we can pass arguments with variables name also when position of variable is different
-    greeting(greet = "Good Morning", name = "Arslan")
+//    greeting("Arslan","Good Morning")
+//    // we can pass arguments with variables name also when position of variable is different
+//    greeting(greet = "Good Morning", name = "Arslan")
 //    greeting()
+
+    evenOdd(5)
+    evenOdd(6)
 
 }
 
@@ -34,6 +37,11 @@ fun main(){
 
 fun greeting(name: String, greet: String = "Good Night"){
     println("Hello $name, $greet")
+}
+
+fun evenOdd(num1 : Int){
+    val result = if(num1 % 2 == 0) "Even" else "Odd"
+    println(result)
 }
 
 
